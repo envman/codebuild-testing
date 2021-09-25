@@ -17,5 +17,5 @@ phases:
       - cdk --version
 
   build:
-    echo $TEST
-    
+    commands:
+      - echo $TEST
