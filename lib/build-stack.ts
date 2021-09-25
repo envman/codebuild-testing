@@ -6,7 +6,7 @@ export class BuildStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    console.log('test')
+    console.log('testing')
 
     const lambda = new NodejsFunction(this, 'ok', {
       
