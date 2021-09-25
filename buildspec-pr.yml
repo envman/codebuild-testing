@@ -16,5 +16,6 @@ phases:
       - echo Deploy started on `date`
       - echo Build CDK project...
       - npm install
-      - cdk deploy --require-approval never
+      - export STACK_NAME=$(tr '/' '-' <<<"${CODEBUILD_SOURCE_VERSION}") && cdk deploy --require-approval never
+      # - cdk deploy --require-approval never
       - echo Deploy completed on the `date`
