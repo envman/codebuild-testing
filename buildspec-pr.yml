@@ -1,9 +1,5 @@
 version: 0.2
 
-env:
-  variables:
-    STACK_NAME: ${CODEBUILD_WEBHOOK_HEAD_REF}
-
 phases:
   install:
     runtime-versions:
@@ -15,6 +11,7 @@ phases:
 
   build:
     commands:
+      - export STACK_NAME=${CODEBUILD_WEBHOOK_HEAD_REF}
       - echo Deploy started on `date`
       - echo Build CDK project...
       - npm install
