@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    STACK_NAME: $CODEBUILD_WEBHOOK_HEAD_REF
+    STACK_NAME: $(CODEBUILD_WEBHOOK_HEAD_REF)
 
 phases:
   install:
