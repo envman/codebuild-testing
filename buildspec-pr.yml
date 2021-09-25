@@ -2,6 +2,10 @@ version: 0.2
 
 env:
   shell: bash
+  variables:
+    TEST: "Hello Test Variable"
+  exported-variables:
+    - TEST
 
 phases:
   install:
