@@ -7,6 +7,6 @@ exports.handler = async (event: APIGatewayProxyEvent, context: APIGatewayProxyRe
 
   return {
     statusCode: 200,
-    body: 'Test'
+    body: 'OK'
   }
 }
