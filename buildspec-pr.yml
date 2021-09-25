@@ -6,6 +6,7 @@ env:
     TEST: "Hello Test Variable"
   exported-variables:
     - TEST
+    - TESTING
 
 phases:
   install:
@@ -19,3 +20,13 @@ phases:
   build:
     commands:
       - echo $TEST
+      - TESTING="Testing export"
+
+          
+  # build:
+  #   commands:
+  #     - echo Deploy started on `date`
+  #     - echo Build CDK project...
+  #     - npm install
+  #     - export STACK_NAME=$(tr '/' '-' <<<"build-stack-${CODEBUILD_SOURCE_VERSION}") && cdk deploy --require-approval never
+  #     - echo Deploy completed on the `date`
