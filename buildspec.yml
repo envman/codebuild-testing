@@ -9,22 +9,19 @@ phases:
       - npm install -g typescript
       - cdk --version
 
-  pre_build:
-    commands:
-      - echo Logging in to Amazon ECR...
-      - aws --version
-      - echo $AWS_DEFAULT_REGION
-      # - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-      - IMAGE_TAG=${COMMIT_HASH:=latest}
+  # pre_build:
+  #   commands:
+  #     - echo Logging in to Amazon ECR...
+  #     - aws --version
+  #     - echo $AWS_DEFAULT_REGION
+  #     # - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+  #     - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+  #     - IMAGE_TAG=${COMMIT_HASH:=latest}
 
   build:
     commands:
       - echo Deploy started on `date`
       - echo Build CDK project...
-      # - cd ./Services/RemindersManagement/RemindersManagement.Build
       - npm install
-      # - npm run build
-      # - cdk deploy --require-approval never  -c imageTag=$IMAGE_TAG
       - cdk deploy --require-approval never
       - echo Deploy completed on the `date`
