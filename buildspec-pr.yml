@@ -1,0 +1,22 @@
+version: 0.2
+
+env:
+  variables:
+    STACK_NAME: $CODEBUILD_WEBHOOK_HEAD_REF
+
+phases:
+  install:
+    runtime-versions:
+        nodejs: 12
+    commands:
+      - npm install -g aws-cdk
+      - npm install -g typescript
+      - cdk --version
+
+  build:
+    commands:
+      - echo Deploy started on `date`
+      - echo Build CDK project...
+      - npm install
+      - cdk deploy --require-approval never
+      - echo Deploy completed on the `date`
