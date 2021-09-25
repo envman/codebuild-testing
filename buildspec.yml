@@ -1,5 +1,9 @@
 version: 0.2
 
+env:
+  variables:
+    STACK_NAME: "build_stack_master"
+
 phases:
   install:
     runtime-versions:
@@ -14,6 +18,5 @@ phases:
       - echo Deploy started on `date`
       - echo Build CDK project...
       - npm install
-      - $STACK_NAME=$(echo build_stack_master)
       - cdk deploy --require-approval never
       - echo Deploy completed on the `date`
