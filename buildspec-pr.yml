@@ -11,7 +11,8 @@ phases:
 
   build:
     commands:
-      - STACK_NAME=${CODEBUILD_WEBHOOK_HEAD_REF}
+      - echo ${CODEBUILD_WEBHOOK_HEAD_REF}
+      # - STACK_NAME=${CODEBUILD_WEBHOOK_HEAD_REF}
       - echo Deploy started on `date`
       - echo Build CDK project...
       - npm install
