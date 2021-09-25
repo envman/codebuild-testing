@@ -10,7 +10,7 @@ export class BuildStack extends cdk.Stack {
       
     })
 
-    new LambdaRestApi(this, 'api', {
+    const api = new LambdaRestApi(this, 'api', {
       handler: lambda
     }) 
   }
