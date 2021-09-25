@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    STACK_NAME: "build_stack_master"
+    STACK_NAME: "build-stack-master"
 
 phases:
   install:
